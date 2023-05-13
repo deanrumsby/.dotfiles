@@ -13,6 +13,9 @@ brew install --cask kitty
 # stow for dotfiles
 brew install stow
 
+# lazygit git manager
+brew install lazygit
+
 # neovim
 brew install neovim
 
