@@ -16,7 +16,10 @@ return {
 		config = function(_, opts)
 			require("nvim-tree").setup(opts)
 			local api = require("nvim-tree.api")
-			vim.keymap.set("n", "<leader>ft", api.tree.toggle, { desc = "Toggle [F]ile [T]ree" })
+			vim.keymap.set("n", "<leader>ft", function()
+				api.tree.toggle()
+				api.tree.reload()
+			end, { desc = "Toggle [F]ile [T]ree" })
 		end,
 	},
 
