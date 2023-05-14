@@ -30,7 +30,7 @@ return {
 			vim.keymap.set("n", "<leader>sp", require("telescope.builtin").git_files, { desc = "[S]earch [P]roject" })
 			vim.keymap.set(
 				"n",
-				"leader>sw",
+				"<leader>sw",
 				require("telescope.builtin").grep_string,
 				{ desc = "[S]earch current [W]ord" }
 			)
