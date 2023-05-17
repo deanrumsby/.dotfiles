@@ -20,6 +20,8 @@ return {
 				sources = {
 					-- lua
 					null_ls.builtins.formatting.stylua,
+					-- javascript / typescript linting
+					null_ls.builtins.diagnostics.eslint_d,
 				},
 
 				on_attach = function(client, bufnr)
