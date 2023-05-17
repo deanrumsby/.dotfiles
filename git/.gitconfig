@@ -1,7 +1,6 @@
 [user]
 	name = Dean Rumsby
 	email = dean@deanrumsby.com
-[core]
-	editor = nvim
+
 [init]
 	defaultBranch = main

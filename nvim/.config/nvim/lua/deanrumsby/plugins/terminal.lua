@@ -5,14 +5,18 @@ return {
 		version = "*",
 		config = function()
 			require("toggleterm").setup({})
-			local Terminal = require("toggleterm.terminal").Terminal
-			local lazygit = Terminal:new({ cmd = "lazygit", direction = "float", hidden = true })
 
-			local function lazygit_toggle()
-				lazygit:toggle()
+			local function lazygit_open()
+				local Terminal = require("toggleterm.terminal").Terminal
+				local lazygit = Terminal:new({
+					cmd = "lazygit --use-config-file ~/.config/lazygit/config-nvim.yml",
+					direction = "float",
+					hidden = true,
+				})
+				lazygit:open()
 			end
 
-			vim.keymap.set("n", "<leader>lg", lazygit_toggle, { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>lg", lazygit_open, { noremap = true, silent = true })
 		end,
 	},
 }

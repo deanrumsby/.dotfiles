@@ -13,6 +13,9 @@ if [[ $IS_APPLE_SILICON ]]; then
 	PATH=/opt/homebrew/bin:$PATH
 fi
 
+# default editor
+export EDITOR=nvim
+
 # git tabcompletion
 autoload -Uz compinit && compinit
 

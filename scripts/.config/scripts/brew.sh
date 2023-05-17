@@ -19,6 +19,9 @@ brew install lazygit
 # neovim
 brew install neovim
 
+# neovim-remote - for use with plugins
+brew install neovim-remote
+
 # github cli
 brew install gh
 
