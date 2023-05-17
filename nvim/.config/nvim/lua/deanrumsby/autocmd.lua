@@ -7,3 +7,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	group = highlight_group,
 	pattern = "*",
 })
+
+-- disable line numbers in terminal windows
+local vim_term = vim.api.nvim_create_augroup("vim_term", { clear = true })
+vim.api.nvim_create_autocmd("TermOpen", {
+	callback = function()
+		vim.opt_local.relativenumber = false
+		vim.opt_local.number = false
+		vim.opt_local.signcolumn = "no"
+	end,
+	group = vim_term,
+})
