@@ -8,6 +8,7 @@ return {
 					"lua",
 					"vim",
 					"rust",
+					"typescript",
 				},
 				highlight = {
 					enable = true,

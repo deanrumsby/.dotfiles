@@ -14,6 +14,7 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"rust_analyzer",
+				"tsserver",
 			},
 		},
 	},
@@ -114,6 +115,9 @@ return {
 					},
 				},
 			})
+
+			-- typescript
+			lspconfig.tsserver.setup({})
 		end,
 	},
 	-- rust-analyzer config
