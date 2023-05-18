@@ -9,6 +9,7 @@ return {
 					"vim",
 					"rust",
 					"typescript",
+					"tsx",
 				},
 				highlight = {
 					enable = true,
