@@ -10,6 +10,7 @@ return {
 					"rust",
 					"typescript",
 					"tsx",
+					"javascript",
 				},
 				highlight = {
 					enable = true,
