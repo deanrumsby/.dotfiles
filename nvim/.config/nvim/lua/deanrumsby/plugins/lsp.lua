@@ -15,6 +15,7 @@ return {
 				"lua_ls",
 				"rust_analyzer",
 				"tsserver",
+				"intelephense",
 			},
 		},
 	},
@@ -136,6 +137,11 @@ return {
 
 			-- typescript
 			lspconfig.tsserver.setup({
+				on_attach = format_on_save_on_attach,
+			})
+
+			-- php
+			lspconfig.intelephense.setup({
 				on_attach = format_on_save_on_attach,
 			})
 		end,
