@@ -11,6 +11,7 @@ return {
 					"typescript",
 					"tsx",
 					"javascript",
+					"php",
 				},
 				highlight = {
 					enable = true,
