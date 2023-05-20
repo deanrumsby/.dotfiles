@@ -25,6 +25,9 @@ brew install neovim-remote
 # github cli
 brew install gh
 
+# php
+brew install php
+
 # node
 brew install node
 

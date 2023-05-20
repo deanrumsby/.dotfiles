@@ -141,8 +141,11 @@ return {
 			})
 
 			-- php
+			-- work uses phpcs so we need to disable formatting
 			lspconfig.intelephense.setup({
-				on_attach = format_on_save_on_attach,
+				on_init = function(client)
+					client.server_capabilities.documentFormattingProvider = false
+				end,
 			})
 		end,
 	},

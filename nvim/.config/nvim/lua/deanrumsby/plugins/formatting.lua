@@ -22,6 +22,10 @@ return {
 					null_ls.builtins.formatting.stylua,
 					-- javascript / typescript linting
 					null_ls.builtins.diagnostics.eslint_d,
+					-- phpcs
+					null_ls.builtins.diagnostics.phpcs,
+					-- phpcbf
+					null_ls.builtins.formatting.phpcbf,
 				},
 
 				on_attach = function(client, bufnr)

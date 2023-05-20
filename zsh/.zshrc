@@ -13,6 +13,9 @@ if [[ $IS_APPLE_SILICON ]]; then
 	PATH=/opt/homebrew/bin:$PATH
 fi
 
+# add composer binaries to path
+PATH=~/.composer/vendor/bin:$PATH
+
 # default editor
 export EDITOR=nvim
 
