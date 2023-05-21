@@ -5,5 +5,4 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open float
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- terminal keymaps
-vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { silent = true, noremap = true })
 vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], { silent = true, noremap = true })
