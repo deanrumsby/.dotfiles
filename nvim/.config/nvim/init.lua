@@ -1,6 +1,6 @@
 -- set options
 require("deanrumsby.options")
--- auto commands
+-- autocommands
 require("deanrumsby.autocmd")
 -- base key mappings
 require("deanrumsby.mappings")
