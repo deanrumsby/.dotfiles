@@ -5,6 +5,9 @@ return {
 	-- auto blankline indentation
 	"lukas-reineke/indent-blankline.nvim",
 
+	-- better commenting
+	"numToStr/Comment.nvim",
+
 	-- enable non-lsp binaries to hook in to lsp client
 	-- for formatting and linting etc
 	{
