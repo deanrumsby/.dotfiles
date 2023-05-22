@@ -12,6 +12,7 @@ return {
 					"tsx",
 					"javascript",
 					"php",
+					"python",
 				},
 				highlight = {
 					enable = true,

@@ -16,6 +16,7 @@ return {
 				"rust_analyzer",
 				"tsserver",
 				"intelephense",
+				"pyright",
 			},
 		},
 	},
@@ -147,6 +148,9 @@ return {
 					client.server_capabilities.documentFormattingProvider = false
 				end,
 			})
+
+			-- python
+			lspconfig.pyright.setup({})
 		end,
 	},
 	-- rust-analyzer config
