@@ -29,6 +29,8 @@ return {
 					null_ls.builtins.diagnostics.phpcs,
 					-- phpcbf
 					null_ls.builtins.formatting.phpcbf,
+					-- black (python)
+					null_ls.builtins.formatting.black,
 				},
 
 				on_attach = function(client, bufnr)
