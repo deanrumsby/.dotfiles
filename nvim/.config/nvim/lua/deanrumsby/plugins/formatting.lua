@@ -32,7 +32,7 @@ return {
 					-- black (python)
 					null_ls.builtins.formatting.black,
 					-- racket
-					null_ls.builtins.formatting.racket_fmt,
+					null_ls.builtins.formatting.raco_fmt,
 				},
 
 				on_attach = function(client, bufnr)
