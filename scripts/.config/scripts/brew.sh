@@ -41,3 +41,6 @@ $(brew --prefix)/opt/fzf/install
 
 # ripgrep
 brew install ripgrep
+
+# racket
+brew install --cask racket

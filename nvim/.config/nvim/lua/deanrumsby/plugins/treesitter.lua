@@ -13,6 +13,7 @@ return {
 					"javascript",
 					"php",
 					"python",
+					"racket",
 				},
 				highlight = {
 					enable = true,

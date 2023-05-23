@@ -31,6 +31,8 @@ return {
 					null_ls.builtins.formatting.phpcbf,
 					-- black (python)
 					null_ls.builtins.formatting.black,
+					-- racket
+					null_ls.builtins.formatting.racket_fmt,
 				},
 
 				on_attach = function(client, bufnr)

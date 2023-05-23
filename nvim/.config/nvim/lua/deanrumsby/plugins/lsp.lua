@@ -151,6 +151,9 @@ return {
 
 			-- python
 			lspconfig.pyright.setup({})
+
+			-- racket
+			lspconfig.racket_langserver.setup({})
 		end,
 	},
 	-- rust-analyzer config
