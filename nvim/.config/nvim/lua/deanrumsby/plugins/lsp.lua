@@ -86,7 +86,7 @@ return {
 						vim.lsp.buf.references,
 						{ desc = "[G]o to [R]eferences", buffer = ev.buf }
 					)
-					vim.keymap.set("n", "<leader>f", function()
+					vim.keymap.set("n", "<leader>ff", function()
 						vim.lsp.buf.format()
 					end, { desc = "[F]ormat", buffer = ev.buf })
 				end,
