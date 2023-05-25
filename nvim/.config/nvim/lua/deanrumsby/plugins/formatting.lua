@@ -18,13 +18,16 @@ return {
 		lazy = false,
 		config = function()
 			local null_ls = require("null-ls")
-			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+			local formatting_group = vim.api.nvim_create_augroup("LspFormatting", {})
+			local code_actions_group = vim.api.nvim_create_augroup("LspCodeActions", {})
 			null_ls.setup({
 				sources = {
 					-- lua
 					null_ls.builtins.formatting.stylua,
 					-- javascript / typescript linting
 					null_ls.builtins.diagnostics.eslint_d,
+					-- javascript / typescript fixing
+					null_ls.builtins.code_actions.eslint_d,
 					-- phpcs
 					null_ls.builtins.diagnostics.phpcs,
 					-- phpcbf
@@ -37,12 +40,23 @@ return {
 
 				on_attach = function(client, bufnr)
 					if client.supports_method("textDocument/formatting") then
-						vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+						vim.api.nvim_clear_autocmds({ group = formatting_group, buffer = bufnr })
 						vim.api.nvim_create_autocmd("BufWritePre", {
-							group = augroup,
+							group = formatting_group,
 							buffer = bufnr,
 							callback = function()
 								vim.lsp.buf.format()
+							end,
+						})
+					end
+
+					if client.supports_method("textDocument/codeAction") then
+						vim.api.nvim_clear_autocmds({ group = code_actions_group, buffer = bufnr })
+						vim.api.nvim_create_autocmd("BufWritePre", {
+							group = code_actions_group,
+							buffer = bufnr,
+							callback = function()
+								vim.lsp.buf.code_action()
 							end,
 						})
 					end
