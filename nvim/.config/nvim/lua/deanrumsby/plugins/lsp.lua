@@ -138,7 +138,9 @@ return {
 
 			-- typescript
 			lspconfig.tsserver.setup({
-				on_attach = format_on_save_on_attach,
+				on_init = function(client)
+					client.server_capabilities.documentFormattingProvider = false
+				end,
 			})
 
 			-- php
