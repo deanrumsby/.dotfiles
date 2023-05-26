@@ -31,7 +31,9 @@ return {
 					-- phpcs
 					null_ls.builtins.diagnostics.phpcs,
 					-- phpcbf
-					null_ls.builtins.formatting.phpcbf,
+					null_ls.builtins.formatting.phpcbf.with({
+						args = { "--ignore='*.blade.php'" },
+					}),
 					-- black (python)
 					null_ls.builtins.formatting.black,
 					-- racket
