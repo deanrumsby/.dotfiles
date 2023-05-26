@@ -49,4 +49,7 @@ return {
 			end, { desc = "Harpoon File [4]" })
 		end,
 	},
+
+	-- line numbers auto toggle
+	"sitiom/nvim-numbertoggle",
 }
