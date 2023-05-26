@@ -6,7 +6,7 @@ return {
 	"lukas-reineke/indent-blankline.nvim",
 
 	-- better commenting
-	"numToStr/Comment.nvim",
+	{ "numToStr/Comment.nvim", config = true },
 
 	-- enable non-lsp binaries to hook in to lsp client
 	-- for formatting and linting etc
