@@ -17,3 +17,15 @@ vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], { silent = true, noremap = tru
 vim.keymap.set("n", "<leader>ln", function()
 	vim.wo.relativenumber = not vim.wo.relativenumber
 end, { desc = "Toggle relative [L]ine [N]umbers" })
+
+-- add new line above and below
+vim.keymap.set("n", "[<Space>", "O<Esc>", { desc = "Add new line above" })
+vim.keymap.set("n", "]<Space>", "o<Esc>", { desc = "Add new line below" })
+
+-- move lines up and down
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
+
+-- move visual block up and down
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move visual block down" })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move visual block up" })
