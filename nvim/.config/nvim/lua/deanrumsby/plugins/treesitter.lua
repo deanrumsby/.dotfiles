@@ -14,6 +14,7 @@ return {
 					"php",
 					"python",
 					"racket",
+					"haskell",
 				},
 				highlight = {
 					enable = true,

@@ -32,5 +32,3 @@ zstyle ':vcs_info:git:*' formats '%b'
 
 # fuzzy finder bindings and autocompletion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-[ -f "/Users/deanrumsby/.ghcup/env" ] && source "/Users/deanrumsby/.ghcup/env" # ghcup-env

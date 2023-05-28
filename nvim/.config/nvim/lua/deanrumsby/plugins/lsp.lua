@@ -17,6 +17,7 @@ return {
 				"tsserver",
 				"intelephense",
 				"pyright",
+				"hls",
 			},
 		},
 	},
@@ -156,6 +157,11 @@ return {
 
 			-- racket
 			lspconfig.racket_langserver.setup({})
+
+			-- haskell
+			lspconfig.hls.setup({
+				filetypes = { "haskell", "lhaskell", "cabal" },
+			})
 		end,
 	},
 	-- rust-analyzer config
