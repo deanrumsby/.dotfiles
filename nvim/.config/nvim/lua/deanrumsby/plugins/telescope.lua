@@ -4,7 +4,32 @@ return {
 		branch = "0.1.x",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
-			require("telescope").setup({})
+			require("telescope").setup({
+				defaults = {
+					mappings = {
+						n = {
+							["<C-j>"] = require("telescope.actions").move_selection_next,
+							["<C-k>"] = require("telescope.actions").move_selection_previous,
+						},
+						i = {
+							["<C-j>"] = require("telescope.actions").move_selection_next,
+							["<C-k>"] = require("telescope.actions").move_selection_previous,
+						},
+					},
+				},
+				pickers = {
+					buffers = {
+						mappings = {
+							n = {
+								["<C-b>"] = require("telescope.actions").delete_buffer,
+							},
+							i = {
+								["<C-b>"] = require("telescope.actions").delete_buffer,
+							},
+						},
+					},
+				},
+			})
 
 			vim.keymap.set(
 				"n",
