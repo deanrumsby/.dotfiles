@@ -6,3 +6,6 @@ fi
 
 # stylua opinionated lua formatter
 cargo install stylua
+
+# wasm-pack
+cargo install wasm-pack
