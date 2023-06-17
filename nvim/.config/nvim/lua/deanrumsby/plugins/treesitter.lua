@@ -15,6 +15,8 @@ return {
 					"python",
 					"racket",
 					"haskell",
+					"markdown",
+					"markdown_inline",
 				},
 				highlight = {
 					enable = true,
