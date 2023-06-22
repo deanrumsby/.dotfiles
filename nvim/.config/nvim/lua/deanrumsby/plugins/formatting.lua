@@ -38,6 +38,8 @@ return {
 					null_ls.builtins.formatting.black,
 					-- racket
 					null_ls.builtins.formatting.raco_fmt,
+					-- prettierd
+					null_ls.builtins.formatting.prettierd,
 				},
 
 				on_attach = function(client, bufnr)

@@ -44,3 +44,6 @@ brew install ripgrep
 
 # racket
 brew install --cask racket
+
+# prettier daemon
+brew install fsouza/prettierd/prettierd
