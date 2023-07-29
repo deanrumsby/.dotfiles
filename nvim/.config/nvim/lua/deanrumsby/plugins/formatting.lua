@@ -27,7 +27,7 @@ return {
 					-- javascript / typescript linting
 					null_ls.builtins.diagnostics.eslint_d,
 					-- javascript / typescript formatting
-					null_ls.builtins.formatting.eslint_d,
+					-- null_ls.builtins.formatting.eslint_d,
 					-- phpcs
 					null_ls.builtins.diagnostics.phpcs,
 					-- phpcbf
