@@ -12,6 +12,7 @@ return {
 					"tsx",
 					"javascript",
 					"php",
+					"css",
 					"python",
 					"racket",
 					"haskell",
