@@ -45,5 +45,14 @@ brew install ripgrep
 # racket
 brew install --cask racket
 
+# prettier
+brew install prettier
+
 # prettier daemon
 brew install fsouza/prettierd/prettierd
+
+# QEMU for CPU emulation
+brew install qemu
+
+# zellij terminal multiplexer
+brew install zellij
