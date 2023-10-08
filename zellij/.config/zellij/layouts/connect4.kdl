@@ -1,0 +1,29 @@
+layout cwd="~/Projects/connect4" {
+    tab_template name="top-tab-bar" {
+        pane {
+            size 2
+            borderless true
+            plugin location="zellij:compact-bar"
+        }
+        children
+    }
+    top-tab-bar name="code" focus=true {
+        pane {
+            borderless true
+            command "nvim"
+            args "src/App.tsx"
+        }
+    }
+    top-tab-bar name="services" {
+        pane {
+            name "Server"
+            command "npm"
+            args "run" "dev"
+        }
+        pane {
+            name "Tests"
+            command "npm"
+            args "test"
+        }
+    }
+}
