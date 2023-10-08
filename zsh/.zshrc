@@ -34,3 +34,8 @@ zstyle ':vcs_info:git:*' formats '%b'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f "/Users/deanrumsby/.ghcup/env" ] && source "/Users/deanrumsby/.ghcup/env" # ghcup-env
+
+code() {
+	cd ~/Projects/$1
+	zellij -l $1 -s $1
+}
