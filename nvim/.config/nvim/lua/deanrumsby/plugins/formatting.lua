@@ -8,7 +8,7 @@ return {
 	-- enable non-lsp binaries to hook in to lsp client
 	-- for formatting and linting etc
 	{
-		"jose-elias-alvarez/null-ls.nvim",
+		"nvimtools/none-ls.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
@@ -19,8 +19,8 @@ return {
 			local code_actions_group = vim.api.nvim_create_augroup("LspCodeActions", {})
 			null_ls.setup({
 				sources = {
-                    -- c and c++
-                    null_ls.builtins.formatting.clang_format,
+					-- c and c++
+					null_ls.builtins.formatting.clang_format,
 					-- lua
 					null_ls.builtins.formatting.stylua,
 					-- javascript / typescript linting
