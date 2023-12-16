@@ -13,6 +13,7 @@ return {
 		opts = {
 			ensure_installed = {
 				"clangd",
+				"jdtls",
 				"lua_ls",
 				"rust_analyzer",
 				"tsserver",
@@ -91,6 +92,22 @@ return {
 					vim.keymap.set("n", "<leader>ff", function()
 						vim.lsp.buf.format()
 					end, { desc = "[F]ormat", buffer = ev.buf })
+				end,
+			})
+
+			-- java jdtls
+			lspconfig.jdtls.setup({
+				on_attach = function(client, bufnr)
+					local augroup = vim.api.nvim_create_augroup("JdtlsFormatOnSave", {})
+					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						group = augroup,
+						buffer = bufnr,
+						callback = function()
+							vim.lsp.buf.format()
+						end,
+					})
+					client.server_capabilities.semanticTokensProvider = nil
 				end,
 			})
 

@@ -59,3 +59,6 @@ brew install zellij
 
 # clang-format for formatting C/C++ code
 brew install clang-format
+
+# java
+brew install java
