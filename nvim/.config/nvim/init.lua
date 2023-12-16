@@ -4,6 +4,8 @@ require("deanrumsby.options")
 require("deanrumsby.autocmd")
 -- base key mappings
 require("deanrumsby.mappings")
+-- indentation
+require("deanrumsby.indentation")
 
 -- install lazy package manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

@@ -26,33 +26,3 @@ vim.api.nvim_create_autocmd("User", {
 		require("nvim-tree.api").tree.reload()
 	end,
 })
-
--- set typescript indent to 2 spaces
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "typescript",
-	callback = function()
-		vim.bo.tabstop = 2
-		vim.bo.shiftwidth = 2
-		vim.bo.softtabstop = 2
-	end,
-})
-
--- set typescriptreact indent to 2 spaces
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "typescriptreact",
-	callback = function()
-		vim.bo.tabstop = 2
-		vim.bo.shiftwidth = 2
-		vim.bo.softtabstop = 2
-	end,
-})
-
--- set css indent to 2 spaces
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "css",
-	callback = function()
-		vim.bo.tabstop = 2
-		vim.bo.shiftwidth = 2
-		vim.bo.softtabstop = 2
-	end,
-})

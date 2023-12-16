@@ -1,7 +1,4 @@
 return {
-	-- auto detect indentation
-	"tpope/vim-sleuth",
-
 	-- auto blankline indentation
 	"lukas-reineke/indent-blankline.nvim",
 
