@@ -12,6 +12,7 @@ return {
 		lazy = false,
 		opts = {
 			ensure_installed = {
+				"clangd",
 				"lua_ls",
 				"rust_analyzer",
 				"tsserver",
