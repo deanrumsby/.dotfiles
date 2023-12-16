@@ -1,6 +1,6 @@
 return {
-	-- auto blankline indentation
-	"lukas-reineke/indent-blankline.nvim",
+	-- indentation guides
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
 	-- better commenting
 	{ "numToStr/Comment.nvim", config = true },
@@ -19,6 +19,8 @@ return {
 			local code_actions_group = vim.api.nvim_create_augroup("LspCodeActions", {})
 			null_ls.setup({
 				sources = {
+                    -- c and c++
+                    null_ls.builtins.formatting.clang_format,
 					-- lua
 					null_ls.builtins.formatting.stylua,
 					-- javascript / typescript linting

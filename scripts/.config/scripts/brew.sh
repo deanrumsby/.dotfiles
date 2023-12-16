@@ -56,3 +56,6 @@ brew install qemu
 
 # zellij terminal multiplexer
 brew install zellij
+
+# clang-format for formatting C/C++ code
+brew install clang-format

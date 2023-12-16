@@ -93,26 +93,12 @@ return {
 					end, { desc = "[F]ormat", buffer = ev.buf })
 				end,
 			})
-			-- format on save augroup
-			local augroup = vim.api.nvim_create_augroup("UserLspConfigFormatOnSave", {})
 
-			-- format on save on_attach
-			local format_on_save_on_attach = function(client, bufnr)
-				if client.supports_method("textDocument/formatting") then
-					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-					vim.api.nvim_create_autocmd("BufWritePre", {
-						group = augroup,
-						buffer = bufnr,
-						callback = function()
-							vim.lsp.buf.format()
-						end,
-					})
-				end
-			end
+			--clangd
+			lspconfig.clangd.setup({})
 
 			-- lua
 			lspconfig.lua_ls.setup({
-				on_attach = format_on_save_on_attach,
 				settings = {
 					Lua = {
 						runtime = {
