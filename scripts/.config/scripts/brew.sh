@@ -62,3 +62,6 @@ brew install clang-format
 
 # java
 brew install java
+
+# fd for faster find
+brew install fd

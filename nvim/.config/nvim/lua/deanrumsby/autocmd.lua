@@ -18,11 +18,3 @@ vim.api.nvim_create_autocmd("TermOpen", {
 	end,
 	group = vim_term,
 })
-
--- reload nvim-tree whenever gitsigns event occurs
-vim.api.nvim_create_autocmd("User", {
-	pattern = "GitSignsUpdate",
-	callback = function()
-		require("nvim-tree.api").tree.reload()
-	end,
-})

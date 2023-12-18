@@ -1,27 +1,4 @@
 return {
-	-- file tree
-	{
-		"nvim-tree/nvim-tree.lua",
-		lazy = false,
-		opts = {
-			view = {
-				side = "right",
-			},
-			actions = {
-				open_file = {
-					quit_on_open = true,
-				},
-			},
-		},
-		config = function(_, opts)
-			require("nvim-tree").setup(opts)
-			local api = require("nvim-tree.api")
-			vim.keymap.set("n", "<leader>ft", function()
-				api.tree.toggle()
-			end, { desc = "Toggle [F]ile [T]ree" })
-		end,
-	},
-
 	-- buffer hotswitching
 	{
 		"ThePrimeagen/harpoon",
