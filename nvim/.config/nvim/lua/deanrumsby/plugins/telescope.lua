@@ -81,22 +81,4 @@ return {
 			require("telescope").load_extension("fzf")
 		end,
 	},
-
-	-- file browser extension
-	{
-		"nvim-telescope/telescope-file-browser.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-		config = function()
-			require("telescope").setup({
-				extensions = {
-					file_browser = {
-						hijack_netrw = true,
-					},
-				},
-			})
-			require("telescope").load_extension("file_browser")
-
-			vim.keymap.set("n", "<leader>fb", "<cmd>Telescope file_browser<cr>", { desc = "[F]ile [B]rowser" })
-		end,
-	},
 }
