@@ -14,6 +14,7 @@ return {
 					"typescript",
 					"tsx",
 					"html",
+					"make",
 					"javascript",
 					"php",
 					"css",
