@@ -20,6 +20,7 @@ return {
 				"intelephense",
 				"pyright",
 				"hls",
+				"zls",
 			},
 		},
 	},
@@ -166,6 +167,9 @@ return {
 			lspconfig.hls.setup({
 				filetypes = { "haskell", "lhaskell", "cabal" },
 			})
+
+			-- zig
+			lspconfig.zls.setup({})
 		end,
 	},
 	-- rust-analyzer config

@@ -22,6 +22,7 @@ return {
 					"racket",
 					"markdown",
 					"markdown_inline",
+					"zig",
 				},
 				highlight = {
 					enable = true,
