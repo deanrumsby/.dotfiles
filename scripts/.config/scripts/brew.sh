@@ -1,10 +1,13 @@
-#!/bin/zsh
+#!/bin/bash
 
 if ! type "brew" > /dev/null; then
 	echo "you need to install homebrew and configure your PATH before running the script"
 fi
 
 # raycast
+# enables assigning hotkeys to apps
+# and basic window management
+# plus a host of other useful features
 brew install --cask raycast
 
 # kitty terminal
@@ -19,7 +22,10 @@ brew install lazygit
 # neovim
 brew install neovim
 
-# neovim-remote - for use with plugins
+# neovim-remote
+# used to allow opening of files 
+# through lazygit into the current 
+# neovim instance
 brew install neovim-remote
 
 # github cli
@@ -32,10 +38,13 @@ brew install php
 brew install node
 
 # nerd fonts symbols
+# we install symbols only as kitty terminal can
+# patch our current font automatically to use them
 brew tap homebrew/cask-fonts
 brew install font-symbols-only-nerd-font
 
 # fzf fuzzy finder
+# great overall tool and also used within nvims telescope plugin
 brew install fzf
 $(brew --prefix)/opt/fzf/install
 
@@ -44,21 +53,6 @@ brew install ripgrep
 
 # racket
 brew install --cask racket
-
-# prettier
-brew install prettier
-
-# prettier daemon
-brew install fsouza/prettierd/prettierd
-
-# QEMU for CPU emulation
-brew install qemu
-
-# zellij terminal multiplexer
-brew install zellij
-
-# clang-format for formatting C/C++ code
-brew install clang-format
 
 # java
 brew install java

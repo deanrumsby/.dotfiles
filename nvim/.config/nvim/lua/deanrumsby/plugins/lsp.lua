@@ -13,7 +13,10 @@ return {
 		opts = {
 			ensure_installed = {
 				"clangd",
+				"html",
+				"cssls",
 				"jdtls",
+				"eslint",
 				"lua_ls",
 				"rust_analyzer",
 				"tsserver",
@@ -96,6 +99,9 @@ return {
 				end,
 			})
 
+			-- eslint
+			lspconfig.eslint.setup({})
+
 			-- java jdtls
 			lspconfig.jdtls.setup({
 				on_attach = function(client, bufnr)
@@ -113,7 +119,39 @@ return {
 			})
 
 			--clangd
-			lspconfig.clangd.setup({})
+			lspconfig.clangd.setup({
+				on_attach = function(_, bufnr)
+					local augroup = vim.api.nvim_create_augroup("ClangDFormatOnSave", {})
+					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						group = augroup,
+						buffer = bufnr,
+						callback = function()
+							vim.lsp.buf.format()
+						end,
+					})
+				end,
+			})
+
+			-- snippet support for vscode html and css lsp
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+			-- html
+			lspconfig.html.setup({
+				capabilities = capabilities,
+				init_options = {
+					provideFormatter = false,
+				},
+			})
+
+			-- css
+			lspconfig.cssls.setup({
+				capabilities = capabilities,
+				init_options = {
+					provideFormatter = false,
+				},
+			})
 
 			-- lua
 			lspconfig.lua_ls.setup({
@@ -150,10 +188,17 @@ return {
 			})
 
 			-- php
-			-- work uses phpcs so we need to disable formatting
 			lspconfig.intelephense.setup({
-				on_init = function(client)
-					client.server_capabilities.documentFormattingProvider = false
+				on_attach = function(_, bufnr)
+					local augroup = vim.api.nvim_create_augroup("PhpFormatOnSave", {})
+					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						group = augroup,
+						buffer = bufnr,
+						callback = function()
+							vim.lsp.buf.format()
+						end,
+					})
 				end,
 			})
 

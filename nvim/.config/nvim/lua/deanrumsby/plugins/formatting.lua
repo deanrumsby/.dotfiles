@@ -19,28 +19,15 @@ return {
 			local code_actions_group = vim.api.nvim_create_augroup("LspCodeActions", {})
 			null_ls.setup({
 				sources = {
-					-- c and c++
-					null_ls.builtins.formatting.clang_format,
 					-- lua
 					null_ls.builtins.formatting.stylua,
-					-- javascript / typescript linting
-					null_ls.builtins.diagnostics.eslint_d,
-					-- javascript / typescript formatting
-					-- null_ls.builtins.formatting.eslint_d,
-					-- phpcs
-					null_ls.builtins.diagnostics.phpcs,
-					-- phpcbf
-					null_ls.builtins.formatting.phpcbf.with({
-						args = { "--ignore='*.blade.php'" },
-					}),
 					-- black (python)
 					null_ls.builtins.formatting.black,
 					-- racket
 					null_ls.builtins.formatting.raco_fmt,
-					-- prettierd
-					null_ls.builtins.formatting.prettierd,
+					-- prettier
+					null_ls.builtins.formatting.prettier,
 				},
-
 				on_attach = function(client, bufnr)
 					if client.supports_method("textDocument/formatting") then
 						vim.api.nvim_clear_autocmds({ group = formatting_group, buffer = bufnr })
