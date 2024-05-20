@@ -24,6 +24,7 @@ return {
 				"pyright",
 				"hls",
 				"zls",
+				"elixirls",
 			},
 		},
 	},
@@ -96,6 +97,23 @@ return {
 					vim.keymap.set("n", "<leader>ff", function()
 						vim.lsp.buf.format()
 					end, { desc = "[F]ormat", buffer = ev.buf })
+				end,
+			})
+
+			-- elixirls
+			lspconfig.elixirls.setup({
+				cmd = { "elixir-ls" },
+				on_attach = function(client, bufnr)
+					local augroup = vim.api.nvim_create_augroup("ElixirFormatOnSave", {})
+					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						group = augroup,
+						buffer = bufnr,
+						callback = function()
+							vim.lsp.buf.format()
+						end,
+					})
+					client.server_capabilities.semanticTokensProvider = nil
 				end,
 			})
 

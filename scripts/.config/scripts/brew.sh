@@ -59,3 +59,6 @@ brew install java
 
 # fd for faster find
 brew install fd
+
+# elixir
+brew install elixir
