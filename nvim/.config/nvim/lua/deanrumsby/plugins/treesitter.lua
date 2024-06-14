@@ -4,35 +4,13 @@ return {
 		build = ":TSUpdate",
 		config = function()
 			require("nvim-treesitter.configs").setup({
-				ensure_installed = {
-					"bash",
-					"c",
-					"lua",
-					"vim",
-					"rust",
-					"java",
-					"typescript",
-					"tsx",
-					"html",
-					"make",
-					"javascript",
-					"php",
-					"css",
-					"python",
-					"racket",
-					"markdown",
-					"markdown_inline",
-					"zig",
-					"vimdoc",
-					"elixir",
-				},
+				ensure_installed = "all",
 				sync_install = false,
 				auto_install = false,
 				ignore_install = {},
 				modules = {},
 				highlight = {
 					enable = true,
-					additional_vim_regex_highlighting = false,
 				},
 				indent = {
 					enable = false,
@@ -56,6 +34,24 @@ return {
 						["[M"] = "@function.outer",
 						["[]"] = "@class.outer",
 					},
+				},
+			})
+
+			-- laravel blade unofficial support
+			local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
+			parser_config.blade = {
+				install_info = {
+					url = "https://github.com/EmranMR/tree-sitter-blade",
+					files = { "src/parser.c" },
+					branch = "main",
+				},
+				filetype = "blade",
+			}
+
+			vim.filetype.add({
+				pattern = {
+					[".*%.blade%.php"] = "blade",
 				},
 			})
 		end,
