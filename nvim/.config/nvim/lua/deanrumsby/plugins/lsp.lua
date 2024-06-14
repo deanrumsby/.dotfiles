@@ -14,6 +14,7 @@ return {
 			ensure_installed = {
 				"clangd",
 				"html",
+				"emmet_ls",
 				"cssls",
 				"jdtls",
 				"eslint",
@@ -154,6 +155,35 @@ return {
 			-- snippet support for vscode html and css lsp
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+			-- emmet html snippets
+			lspconfig.emmet_ls.setup({
+				-- on_attach = on_attach,
+				capabilities = capabilities,
+				filetypes = {
+					"css",
+					"eruby",
+					"html",
+					"javascript",
+					"javascriptreact",
+					"less",
+					"sass",
+					"scss",
+					"svelte",
+					"pug",
+					"typescriptreact",
+					"vue",
+					"php",
+				},
+				init_options = {
+					html = {
+						options = {
+							-- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+							["bem.enabled"] = true,
+						},
+					},
+				},
+			})
 
 			-- html
 			lspconfig.html.setup({
