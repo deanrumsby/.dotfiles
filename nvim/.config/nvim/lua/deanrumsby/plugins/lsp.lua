@@ -174,6 +174,7 @@ return {
 					"typescriptreact",
 					"vue",
 					"php",
+					"blade",
 				},
 				init_options = {
 					html = {
@@ -248,6 +249,10 @@ return {
 						end,
 					})
 				end,
+				filetypes = {
+					"php",
+					"blade",
+				},
 			})
 
 			-- python
