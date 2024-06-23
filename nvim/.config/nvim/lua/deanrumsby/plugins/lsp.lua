@@ -22,6 +22,7 @@ return {
 				"rust_analyzer",
 				"tsserver",
 				"intelephense",
+				"tailwindcss",
 				"pyright",
 				"hls",
 				"zls",
@@ -120,6 +121,9 @@ return {
 
 			-- eslint
 			lspconfig.eslint.setup({})
+
+			--tailwindcss
+			lspconfig.tailwindcss.setup({})
 
 			-- java jdtls
 			lspconfig.jdtls.setup({
